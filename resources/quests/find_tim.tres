@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="QuestData" format=3]
+
+[ext_resource type="Script" path="res://resources/types/quest_objective.gd" id="1_xy267"]
+[ext_resource type="Script" path="res://resources/types/quest_data.gd" id="2_va2xd"]
+
+[sub_resource type="Resource" id="Resource_nqrxl"]
+script = ExtResource("1_xy267")
+text = "Найти Тима у Тихого дома (на востоке)"
+done_flag = &"found_tim"
+visible_when = PackedStringArray()
+
+[sub_resource type="Resource" id="Resource_r53wj"]
+script = ExtResource("1_xy267")
+text = "Отвести Тима домой"
+done_flag = &"tim_home"
+visible_when = PackedStringArray("found_tim")
+
+[resource]
+script = ExtResource("2_va2xd")
+id = &"find_tim"
+title = "Где Тим?"
+description = "Тим снова убежал. Мать уверена — к Тихому дому на восточной окраине, глазеть на серых."
+objectives = Array[ExtResource("1_xy267")]([SubResource("Resource_nqrxl"), SubResource("Resource_r53wj")])

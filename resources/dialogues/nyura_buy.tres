@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="DialogueData" format=3]
+
+[ext_resource type="Script" path="res://resources/types/dialogue_data.gd" id="1_f43f1"]
+
+[resource]
+script = ExtResource("1_f43f1")
+id = &"nyura_buy"
+requires = PackedStringArray("quest:bread_and_ash", "!bread_bought")
+script_text = "nyura: Хлеб свежий, хоть мука и серая. Три монеты каравай.
+!if item:coin>=3 -> can
+nyura: Без монет не дам, Кай, не проси. Самой есть нечего.
+-> end
+@can
+? Беру. -> take
+? Дорого... -> haggle
+@haggle
+nyura: Дорого? Мука нынче на вес серебра. Хочешь — бери, не хочешь — иди с миром.
+? Беру. -> take
+? Позже. -> end
+@take
+!take coin 3
+!give bread
+!set bread_bought
+nyura: Держи. Поклон Марте."

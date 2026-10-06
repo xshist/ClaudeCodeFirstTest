@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogueData" format=3]
+
+[ext_resource type="Script" path="res://resources/types/dialogue_data.gd" id="1_82cap"]
+
+[resource]
+script = ExtResource("1_82cap")
+id = &"marta_night"
+requires = PackedStringArray("time:night")
+script_text = "marta: (шёпотом) Тим уснул? Ложись и ты, Кай."

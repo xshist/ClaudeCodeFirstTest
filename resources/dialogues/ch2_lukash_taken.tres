@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="DialogueData" format=3]
+
+[ext_resource type="Script" path="res://resources/types/dialogue_data.gd" id="1_uqgsh"]
+
+[resource]
+script = ExtResource("1_uqgsh")
+id = &"ch2_lukash_taken"
+requires = PackedStringArray()
+script_text = "grey_brother: Лукаш, сын Ивара. Немощь взяла тебя. Пойдём — мы дадим тебе покой.
+lukash: Покой... Да. Я слышал колокол. Я давно его слышал.
+kai: Постойте! Он же ещё... он же живой!
+grey_brother: Живой? Скажи ему что-нибудь, сын Гордея. Что угодно.
+? Лукаш, не ходи с ними! -> plea
+? (промолчать) -> silent
+@plea
+lukash: ...
+*: Лукаш смотрит на тебя спокойно и пусто, как смотрят на дождь.
+-> go
+@silent
+*: Ты молчишь. Лукаш даже не оборачивается.
+@go
+grey_brother: Видишь? Он уже не здесь. Мы лишь уводим то, что осталось.
+grey_brother: Ступай домой, сын Гордея. И береги своих."

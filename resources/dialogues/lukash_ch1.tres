@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="DialogueData" format=3]
+
+[ext_resource type="Script" path="res://resources/types/dialogue_data.gd" id="1_5h8qo"]
+
+[resource]
+script = ExtResource("1_5h8qo")
+id = &"lukash_ch1"
+requires = PackedStringArray("chapter:1")
+script_text = "*: Лукаш сидит у стены своего дома и смотрит сквозь тебя. Кожа у него цвета золы.
+kai: Лукаш? Тебе принести чего? Воды?
+lukash: ...Не холодно. Совсем не холодно, Кай. И не больно.
+lukash: Это ведь хорошо?
+*: Он улыбается. Улыбка не доходит до глаз.
+!set met_lukash"

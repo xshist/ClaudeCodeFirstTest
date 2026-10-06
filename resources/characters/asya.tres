@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CharacterProfile" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/portraits/asya.png" id="1_g732u"]
+[ext_resource type="Script" path="res://resources/types/character_profile.gd" id="2_7d200"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/asya.png" id="3_5p4hd"]
+
+[resource]
+script = ExtResource("2_7d200")
+id = &"asya"
+display_name = "Ася"
+portrait = ExtResource("1_g732u")
+sheet = ExtResource("3_5p4hd")
+name_color = Color(0.98, 0.72, 0.5, 1)
+voice_pitch = 1.5

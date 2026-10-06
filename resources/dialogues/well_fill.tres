@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="DialogueData" format=3]
+
+[ext_resource type="Script" path="res://resources/types/dialogue_data.gd" id="1_nrtba"]
+
+[resource]
+script = ExtResource("1_nrtba")
+id = &"well_fill"
+requires = PackedStringArray("item:bucket")
+script_text = "*: Ворот скрипит. Ведро поднимается полное — вода ледяная и пахнет железом.
+!sfx water
+!take bucket
+!give water_bucket
+!set water_fetched"

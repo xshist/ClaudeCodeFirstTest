@@ -1,0 +1,65 @@
+[gd_scene load_steps=11 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/sprites/fx/campfire.png" id="1_fire"]
+[ext_resource type="Script" path="res://scripts/world/timed_light.gd" id="2_light"]
+[ext_resource type="Texture2D" path="res://assets/sprites/fx/soft_light.png" id="3_glow"]
+[ext_resource type="PackedScene" path="res://scenes/world/smoke.tscn" id="4_smoke"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f0"]
+atlas = ExtResource("1_fire")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f1"]
+atlas = ExtResource("1_fire")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f2"]
+atlas = ExtResource("1_fire")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f3"]
+atlas = ExtResource("1_fire")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fire"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f3")
+}],
+"loop": true,
+"name": &"burn",
+"speed": 9.0
+}]
+
+[node name="Campfire" type="Node2D"]
+
+[node name="Fire" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_fire")
+animation = &"burn"
+autoplay = "burn"
+offset = Vector2(0, -14)
+
+[node name="Light" type="PointLight2D" parent="."]
+position = Vector2(0, -12)
+color = Color(1, 0.62, 0.32, 1)
+energy = 1.1
+texture = ExtResource("3_glow")
+texture_scale = 1.4
+script = ExtResource("2_light")
+active_phases = Array[StringName]([])
+base_energy = 1.1
+flicker = 0.15
+
+[node name="Smoke" parent="." instance=ExtResource("4_smoke")]
+position = Vector2(0, -24)
+amount = 10

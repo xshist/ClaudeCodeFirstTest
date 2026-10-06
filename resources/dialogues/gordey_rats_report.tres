@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="DialogueData" format=3]
+
+[ext_resource type="Script" path="res://resources/types/dialogue_data.gd" id="1_fcng7"]
+
+[resource]
+script = ExtResource("1_fcng7")
+id = &"gordey_rats_report"
+requires = PackedStringArray("quest:morning_chores", "rats_done", "!rats_reported")
+script_text = "gordey: Тихо стало. Неужто всех выгнал?
+kai: Четыре штуки. Остальные, если были, удрали в поле.
+gordey: Вот и славно. Зерна, может, до зимы и хватит.
+!sfx cough
+gordey: Кха... Кха-кха...
+kai: Ты кашляешь.
+gordey: Пыль, Кай. Амбарная пыль. Не смотри на меня так — я не серый.
+!set rats_reported
+!if water_delivered -> tim
+gordey: Иди к матери. Воды-то она так и не дождалась.
+-> end
+@tim
+gordey: Иди к матери, она тебя звала. И... Тима не видел? Она уже дважды спрашивала."

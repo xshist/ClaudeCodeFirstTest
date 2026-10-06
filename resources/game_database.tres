@@ -1,0 +1,44 @@
+[gd_resource type="Resource" script_class="GameDatabase" format=3]
+
+[ext_resource type="Script" path="res://resources/types/chapter_data.gd" id="1_lhbt0"]
+[ext_resource type="Resource" path="res://resources/chapters/chapter_1.tres" id="2_cad01"]
+[ext_resource type="Resource" path="res://resources/chapters/chapter_2.tres" id="3_cw8ur"]
+[ext_resource type="Script" path="res://resources/types/character_profile.gd" id="4_kh3ut"]
+[ext_resource type="Resource" path="res://resources/characters/kai.tres" id="5_o0gvb"]
+[ext_resource type="Resource" path="res://resources/characters/tim.tres" id="6_5p7mi"]
+[ext_resource type="Resource" path="res://resources/characters/marta.tres" id="7_ktkgl"]
+[ext_resource type="Resource" path="res://resources/characters/gordey.tres" id="8_euspe"]
+[ext_resource type="Resource" path="res://resources/characters/vedana.tres" id="9_jf2m2"]
+[ext_resource type="Resource" path="res://resources/characters/grey_brother.tres" id="10_02ls7"]
+[ext_resource type="Resource" path="res://resources/characters/grey_brother_2.tres" id="11_y7wd0"]
+[ext_resource type="Resource" path="res://resources/characters/lukash.tres" id="12_h1554"]
+[ext_resource type="Resource" path="res://resources/characters/efim.tres" id="13_48a78"]
+[ext_resource type="Resource" path="res://resources/characters/nyura.tres" id="14_76qfy"]
+[ext_resource type="Resource" path="res://resources/characters/bogdan.tres" id="15_b1l2i"]
+[ext_resource type="Resource" path="res://resources/characters/guard.tres" id="16_hbnij"]
+[ext_resource type="Resource" path="res://resources/characters/asya.tres" id="17_nl4g4"]
+[ext_resource type="Resource" path="res://resources/characters/villager_man.tres" id="18_p2ov2"]
+[ext_resource type="Resource" path="res://resources/characters/villager_woman.tres" id="19_rn17v"]
+[ext_resource type="Script" path="res://resources/types/item_data.gd" id="20_jbn8f"]
+[ext_resource type="Resource" path="res://resources/items/coin.tres" id="21_m4tx5"]
+[ext_resource type="Resource" path="res://resources/items/bucket.tres" id="22_o22hh"]
+[ext_resource type="Resource" path="res://resources/items/water_bucket.tres" id="23_rcs1m"]
+[ext_resource type="Resource" path="res://resources/items/stick.tres" id="24_v3p1s"]
+[ext_resource type="Resource" path="res://resources/items/cloth.tres" id="25_ovbvs"]
+[ext_resource type="Resource" path="res://resources/items/bread.tres" id="26_yq1me"]
+[ext_resource type="Resource" path="res://resources/items/ashwort.tres" id="27_c6e8b"]
+[ext_resource type="Resource" path="res://resources/items/medicine.tres" id="28_30mqn"]
+[ext_resource type="Resource" path="res://resources/balance/player_stats.tres" id="29_beouj"]
+[ext_resource type="Script" path="res://resources/types/quest_data.gd" id="30_7bwa1"]
+[ext_resource type="Resource" path="res://resources/quests/morning_chores.tres" id="31_12oex"]
+[ext_resource type="Resource" path="res://resources/quests/find_tim.tres" id="32_4b17q"]
+[ext_resource type="Resource" path="res://resources/quests/bread_and_ash.tres" id="33_c4tdm"]
+[ext_resource type="Script" path="res://resources/types/game_database.gd" id="34_gvt45"]
+
+[resource]
+script = ExtResource("34_gvt45")
+items = Array[ExtResource("20_jbn8f")]([ExtResource("21_m4tx5"), ExtResource("22_o22hh"), ExtResource("23_rcs1m"), ExtResource("24_v3p1s"), ExtResource("25_ovbvs"), ExtResource("26_yq1me"), ExtResource("27_c6e8b"), ExtResource("28_30mqn")])
+quests = Array[ExtResource("30_7bwa1")]([ExtResource("31_12oex"), ExtResource("32_4b17q"), ExtResource("33_c4tdm")])
+characters = Array[ExtResource("4_kh3ut")]([ExtResource("5_o0gvb"), ExtResource("6_5p7mi"), ExtResource("7_ktkgl"), ExtResource("8_euspe"), ExtResource("9_jf2m2"), ExtResource("10_02ls7"), ExtResource("11_y7wd0"), ExtResource("12_h1554"), ExtResource("13_48a78"), ExtResource("14_76qfy"), ExtResource("15_b1l2i"), ExtResource("16_hbnij"), ExtResource("17_nl4g4"), ExtResource("18_p2ov2"), ExtResource("19_rn17v")])
+chapters = Array[ExtResource("1_lhbt0")]([ExtResource("2_cad01"), ExtResource("3_cw8ur")])
+player_stats = ExtResource("29_beouj")

@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="DialogueData" format=3]
+
+[ext_resource type="Script" path="res://resources/types/dialogue_data.gd" id="1_jgqo5"]
+
+[resource]
+script = ExtResource("1_jgqo5")
+id = &"tim_found"
+requires = PackedStringArray("!found_tim")
+script_text = "tim: Тсс! Кай, пригнись! Смотри — дверь открыта.
+tim: Там внутри кто-то сидит. Много кого. И никто не разговаривает.
+kai: Тим! Мать с ума сходит. Пошли домой.
+tim: Кай... а серые — они правда ничего не чувствуют? Совсем-совсем?
+? Правда. Поэтому им и не страшно. -> truth
+? Не знаю, Тим. -> dunno
+@truth
+tim: Значит, им и не грустно. Это ведь не так уж плохо, да?
+kai: ...Пошли домой.
+-> go
+@dunno
+tim: Вот и я не знаю. А брат Ансельм говорит, что это милость.
+kai: Брат Ансельм много чего говорит. Пошли.
+@go
+tim: Ладно, ладно. Иду.
+!set found_tim
+!event tim_follow"

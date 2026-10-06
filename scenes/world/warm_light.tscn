@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/world/timed_light.gd" id="1_light"]
+[ext_resource type="Texture2D" path="res://assets/sprites/fx/soft_light.png" id="2_tex"]
+
+[node name="WarmLight" type="PointLight2D"]
+color = Color(1, 0.72, 0.42, 1)
+texture = ExtResource("2_tex")
+texture_scale = 1.2
+script = ExtResource("1_light")
+base_energy = 0.9

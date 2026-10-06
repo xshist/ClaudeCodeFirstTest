@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="DialogueData" format=3]
+
+[ext_resource type="Script" path="res://resources/types/dialogue_data.gd" id="1_o4d27"]
+
+[resource]
+script = ExtResource("1_o4d27")
+id = &"nyura_default"
+requires = PackedStringArray()
+script_text = "!if chapter:1 -> ch1
+nyura: Хлеб! Свежий хлеб! ...Ну, почти свежий.
+-> end
+@ch1
+nyura: Печь ещё не растопилась, Кай. Приходи днём — будет хлеб."

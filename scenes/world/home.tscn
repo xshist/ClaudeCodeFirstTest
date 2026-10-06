@@ -1,0 +1,389 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/world/world.gd" id="1_2jlpc"]
+[ext_resource type="Texture2D" path="res://assets/sprites/interior/floor_wood.png" id="2_p7twl"]
+[ext_resource type="Texture2D" path="res://assets/sprites/interior/wall_stone.png" id="3_k5mvs"]
+[ext_resource type="PackedScene" path="res://scenes/props/fireplace.tscn" id="4_ilkkj"]
+[ext_resource type="PackedScene" path="res://scenes/props/cauldron.tscn" id="5_bi6hg"]
+[ext_resource type="PackedScene" path="res://scenes/props/shelf.tscn" id="6_eymo2"]
+[ext_resource type="PackedScene" path="res://scenes/props/chest.tscn" id="7_x3mjr"]
+[ext_resource type="PackedScene" path="res://scenes/props/bed.tscn" id="8_rqvdu"]
+[ext_resource type="PackedScene" path="res://scenes/props/bed_child.tscn" id="9_7g7wf"]
+[ext_resource type="PackedScene" path="res://scenes/props/table_rough.tscn" id="10_5smkn"]
+[ext_resource type="PackedScene" path="res://scenes/props/stool.tscn" id="11_gg3xq"]
+[ext_resource type="PackedScene" path="res://scenes/props/loom.tscn" id="12_5e11r"]
+[ext_resource type="PackedScene" path="res://scenes/props/spinning_wheel.tscn" id="13_308ki"]
+[ext_resource type="PackedScene" path="res://scenes/props/workbench.tscn" id="14_1llbc"]
+[ext_resource type="PackedScene" path="res://scenes/props/barrels_stack.tscn" id="15_qvqqn"]
+[ext_resource type="PackedScene" path="res://scenes/props/barrel_water.tscn" id="16_0387f"]
+[ext_resource type="PackedScene" path="res://scenes/props/basket.tscn" id="17_5j4lq"]
+[ext_resource type="PackedScene" path="res://scenes/actors/npc.tscn" id="18_8ovvq"]
+[ext_resource type="Script" path="res://scripts/actors/npc.gd" id="19_dl5mv"]
+[ext_resource type="Resource" path="res://resources/characters/marta.tres" id="20_qw64q"]
+[ext_resource type="Script" path="res://resources/types/dialogue_data.gd" id="21_c2wfr"]
+[ext_resource type="Resource" path="res://resources/dialogues/marta_ch1_deliver.tres" id="22_qb35f"]
+[ext_resource type="Resource" path="res://resources/dialogues/marta_ch1_chores_done.tres" id="23_xdmxf"]
+[ext_resource type="Resource" path="res://resources/dialogues/marta_ch1_waiting.tres" id="24_xm2k4"]
+[ext_resource type="Resource" path="res://resources/dialogues/marta_find_tim.tres" id="25_vb700"]
+[ext_resource type="Resource" path="res://resources/dialogues/marta_ch2_waiting.tres" id="26_e81bm"]
+[ext_resource type="Resource" path="res://resources/dialogues/marta_night.tres" id="27_w4uhh"]
+[ext_resource type="Resource" path="res://resources/dialogues/marta_default.tres" id="28_fabyh"]
+[ext_resource type="Resource" path="res://resources/characters/gordey.tres" id="29_cidd3"]
+[ext_resource type="Resource" path="res://resources/dialogues/gordey_home.tres" id="30_gc75p"]
+[ext_resource type="Resource" path="res://resources/characters/tim.tres" id="31_hd4ea"]
+[ext_resource type="Resource" path="res://resources/dialogues/tim_home.tres" id="32_omns6"]
+[ext_resource type="Script" path="res://scripts/components/inspect_object.gd" id="33_rahk1"]
+[ext_resource type="Resource" path="res://resources/dialogues/home_hearth.tres" id="34_rsmv8"]
+[ext_resource type="Resource" path="res://resources/dialogues/home_chest.tres" id="35_7boys"]
+[ext_resource type="Resource" path="res://resources/dialogues/home_bed.tres" id="36_df12k"]
+[ext_resource type="Resource" path="res://resources/dialogues/home_loom.tres" id="37_pjo52"]
+[ext_resource type="Resource" path="res://resources/dialogues/home_workbench.tres" id="38_qcxvl"]
+[ext_resource type="Script" path="res://scripts/components/door.gd" id="39_jp1rm"]
+[ext_resource type="PackedScene" path="res://scenes/world/warm_light.tscn" id="40_mlhww"]
+[ext_resource type="Texture2D" path="res://assets/sprites/fx/soft_light.png" id="41_1dp1l"]
+[ext_resource type="Script" path="res://scripts/world/timed_light.gd" id="42_efupg"]
+[ext_resource type="PackedScene" path="res://scenes/world/campfire.tscn" id="43_17vjd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l6osc"]
+radius = 22.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ljklt"]
+radius = 18.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ldmrw"]
+radius = 18.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hhltl"]
+radius = 22.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bi3tx"]
+radius = 22.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u1fbc"]
+size = Vector2(32, 22)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ejsbl"]
+size = Vector2(640, 90)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_48ihp"]
+size = Vector2(32, 384)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3bmle"]
+size = Vector2(32, 384)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f4fc5"]
+size = Vector2(640, 32)
+
+[node name="Home" type="Node2D" unique_id=1247677381]
+script = ExtResource("1_2jlpc")
+world_id = &"home"
+display_name = "Дом Гордея"
+music = &"home"
+ambience = &"hearth"
+outdoor = false
+camera_limits = Rect2i(0, 0, 640, 384)
+
+[node name="Floor" type="Sprite2D" parent="." unique_id=854210077]
+z_index = -20
+texture_repeat = 2
+position = Vector2(32, 96)
+texture = ExtResource("2_p7twl")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 576, 272)
+
+[node name="BackWall" type="Sprite2D" parent="." unique_id=1721658560]
+z_index = -19
+texture_repeat = 2
+position = Vector2(32, 0)
+texture = ExtResource("3_k5mvs")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 576, 96)
+
+[node name="LeftWall" type="Polygon2D" parent="." unique_id=17996862]
+z_index = -10
+color = Color(0.09, 0.07, 0.08, 1)
+polygon = PackedVector2Array(0, 0, 32, 0, 32, 384, 0, 384)
+
+[node name="RightWall" type="Polygon2D" parent="." unique_id=1480515098]
+z_index = -10
+color = Color(0.09, 0.07, 0.08, 1)
+polygon = PackedVector2Array(608, 0, 640, 0, 640, 384, 608, 384)
+
+[node name="BottomWall" type="Polygon2D" parent="." unique_id=43620105]
+z_index = -10
+color = Color(0.09, 0.07, 0.08, 1)
+polygon = PackedVector2Array(0, 368, 640, 368, 640, 384, 0, 384)
+
+[node name="Doorway" type="Polygon2D" parent="." unique_id=1219650559]
+z_index = -10
+color = Color(0.32, 0.22, 0.14, 1)
+polygon = PackedVector2Array(296, 368, 344, 368, 344, 384, 296, 384)
+
+[node name="Entities" type="Node2D" parent="." unique_id=1872593861]
+y_sort_enabled = true
+
+[node name="Props" type="Node2D" parent="Entities" unique_id=803313140]
+y_sort_enabled = true
+
+[node name="Fireplace" type="StaticBody2D" parent="Entities/Props" unique_id=39301221 instance=ExtResource("4_ilkkj")]
+position = Vector2(128, 106)
+collision_mask = 0
+
+[node name="Cauldron1" type="StaticBody2D" parent="Entities/Props" unique_id=1186739084 instance=ExtResource("5_bi6hg")]
+position = Vector2(192, 115)
+collision_mask = 0
+
+[node name="Shelf1" type="Node2D" parent="Entities/Props" unique_id=1136818616 instance=ExtResource("6_eymo2")]
+position = Vector2(288, 88)
+
+[node name="Chest1" type="StaticBody2D" parent="Entities/Props" unique_id=620200272 instance=ExtResource("7_x3mjr")]
+position = Vector2(371, 112)
+collision_mask = 0
+
+[node name="KaiBed" type="StaticBody2D" parent="Entities/Props" unique_id=1036874089 instance=ExtResource("8_rqvdu")]
+position = Vector2(467, 157)
+collision_mask = 0
+
+[node name="TimBed" type="StaticBody2D" parent="Entities/Props" unique_id=1282388488 instance=ExtResource("9_7g7wf")]
+position = Vector2(557, 157)
+collision_mask = 0
+
+[node name="Table" type="StaticBody2D" parent="Entities/Props" unique_id=1779268891 instance=ExtResource("10_5smkn")]
+position = Vector2(301, 237)
+collision_mask = 0
+
+[node name="Stool1" type="StaticBody2D" parent="Entities/Props" unique_id=1795787592 instance=ExtResource("11_gg3xq")]
+position = Vector2(256, 266)
+collision_mask = 0
+
+[node name="Stool2" type="StaticBody2D" parent="Entities/Props" unique_id=1423941060 instance=ExtResource("11_gg3xq")]
+position = Vector2(346, 266)
+collision_mask = 0
+
+[node name="Stool3" type="StaticBody2D" parent="Entities/Props" unique_id=913689039 instance=ExtResource("11_gg3xq")]
+position = Vector2(301, 208)
+collision_mask = 0
+
+[node name="Loom" type="StaticBody2D" parent="Entities/Props" unique_id=946603039 instance=ExtResource("12_5e11r")]
+position = Vector2(128, 301)
+collision_mask = 0
+
+[node name="SpinningWheel1" type="StaticBody2D" parent="Entities/Props" unique_id=290281498 instance=ExtResource("13_308ki")]
+position = Vector2(198, 333)
+collision_mask = 0
+
+[node name="Workbench" type="StaticBody2D" parent="Entities/Props" unique_id=606262708 instance=ExtResource("14_1llbc")]
+position = Vector2(486, 333)
+collision_mask = 0
+
+[node name="BarrelsStack4" type="StaticBody2D" parent="Entities/Props" unique_id=404815625 instance=ExtResource("15_qvqqn")]
+position = Vector2(64, 346)
+collision_mask = 0
+
+[node name="BarrelWater3" type="StaticBody2D" parent="Entities/Props" unique_id=484965962 instance=ExtResource("16_0387f")]
+position = Vector2(237, 115)
+collision_mask = 0
+
+[node name="Basket3" type="StaticBody2D" parent="Entities/Props" unique_id=1034387089 instance=ExtResource("17_5j4lq")]
+position = Vector2(403, 339)
+collision_mask = 0
+
+[node name="Trees" type="Node2D" parent="Entities" unique_id=1544780760]
+y_sort_enabled = true
+
+[node name="Decor" type="Node2D" parent="Entities" unique_id=809456648]
+y_sort_enabled = true
+
+[node name="Npcs" type="Node2D" parent="Entities" unique_id=548234388]
+y_sort_enabled = true
+
+[node name="Marta" type="CharacterBody2D" parent="Entities/Npcs" unique_id=956757117 instance=ExtResource("18_8ovvq")]
+position = Vector2(128, 326)
+collision_layer = 4
+collision_mask = 3
+motion_mode = 1
+script = ExtResource("19_dl5mv")
+profile = ExtResource("20_qw64q")
+dialogues = Array[ExtResource("21_c2wfr")]([ExtResource("22_qb35f"), ExtResource("23_xdmxf"), ExtResource("24_xm2k4"), ExtResource("25_vb700"), ExtResource("26_e81bm"), ExtResource("27_w4uhh"), ExtResource("28_fabyh")])
+visible_when = PackedStringArray("!time:night")
+barks = PackedStringArray()
+
+[node name="Gordey" type="CharacterBody2D" parent="Entities/Npcs" unique_id=1887304624 instance=ExtResource("18_8ovvq")]
+position = Vector2(365, 243)
+collision_layer = 4
+collision_mask = 3
+motion_mode = 1
+script = ExtResource("19_dl5mv")
+profile = ExtResource("29_cidd3")
+dialogues = Array[ExtResource("21_c2wfr")]([ExtResource("30_gc75p")])
+idle_facing = 1
+visible_when = PackedStringArray("chapter>=2", "!time:night")
+barks = PackedStringArray()
+
+[node name="Tim" type="CharacterBody2D" parent="Entities/Npcs" unique_id=692136317 instance=ExtResource("18_8ovvq")]
+position = Vector2(256, 253)
+collision_layer = 4
+collision_mask = 3
+motion_mode = 1
+script = ExtResource("19_dl5mv")
+profile = ExtResource("31_hd4ea")
+dialogues = Array[ExtResource("21_c2wfr")]([ExtResource("32_omns6")])
+idle_facing = 2
+visible_when = PackedStringArray("tim_home")
+barks = PackedStringArray()
+
+[node name="Enemies" type="Node2D" parent="Entities" unique_id=1823039601]
+y_sort_enabled = true
+
+[node name="Pickups" type="Node2D" parent="Entities" unique_id=700512094]
+y_sort_enabled = true
+
+[node name="Interactions" type="Node2D" parent="." unique_id=430118913]
+
+[node name="HearthLook" type="Area2D" parent="Interactions" unique_id=145123566]
+position = Vector2(128, 115)
+collision_layer = 16
+collision_mask = 0
+monitoring = false
+script = ExtResource("33_rahk1")
+dialogues = Array[ExtResource("21_c2wfr")]([ExtResource("34_rsmv8")])
+prompt = "Очаг"
+requires = PackedStringArray()
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/HearthLook" unique_id=395606633]
+shape = SubResource("CircleShape2D_l6osc")
+
+[node name="ChestLook" type="Area2D" parent="Interactions" unique_id=1413834495]
+position = Vector2(371, 118)
+collision_layer = 16
+collision_mask = 0
+monitoring = false
+script = ExtResource("33_rahk1")
+dialogues = Array[ExtResource("21_c2wfr")]([ExtResource("35_7boys")])
+prompt = "Сундук"
+requires = PackedStringArray()
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/ChestLook" unique_id=1301248942]
+shape = SubResource("CircleShape2D_ljklt")
+
+[node name="BedLook" type="Area2D" parent="Interactions" unique_id=1101326098]
+position = Vector2(467, 166)
+collision_layer = 16
+collision_mask = 0
+monitoring = false
+script = ExtResource("33_rahk1")
+dialogues = Array[ExtResource("21_c2wfr")]([ExtResource("36_df12k")])
+prompt = "Постель"
+requires = PackedStringArray()
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/BedLook" unique_id=2138871643]
+shape = SubResource("CircleShape2D_ldmrw")
+
+[node name="LoomLook" type="Area2D" parent="Interactions" unique_id=592183128]
+position = Vector2(128, 307)
+collision_layer = 16
+collision_mask = 0
+monitoring = false
+script = ExtResource("33_rahk1")
+dialogues = Array[ExtResource("21_c2wfr")]([ExtResource("37_pjo52")])
+prompt = "Ткацкий стан"
+requires = PackedStringArray()
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/LoomLook" unique_id=110016979]
+shape = SubResource("CircleShape2D_hhltl")
+
+[node name="WorkbenchLook" type="Area2D" parent="Interactions" unique_id=2075450336]
+position = Vector2(486, 339)
+collision_layer = 16
+collision_mask = 0
+monitoring = false
+script = ExtResource("33_rahk1")
+dialogues = Array[ExtResource("21_c2wfr")]([ExtResource("38_qcxvl")])
+prompt = "Верстак"
+requires = PackedStringArray()
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/WorkbenchLook" unique_id=1849853966]
+shape = SubResource("CircleShape2D_bi3tx")
+
+[node name="ExitDoor" type="Area2D" parent="Interactions" unique_id=836506733]
+position = Vector2(320, 362)
+collision_layer = 16
+collision_mask = 0
+monitoring = false
+script = ExtResource("39_jp1rm")
+target_scene = "res://scenes/world/village.tscn"
+target_spawn = &"home_door"
+open_when = PackedStringArray()
+prompt = "Выйти на улицу"
+requires = PackedStringArray()
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/ExitDoor" unique_id=1552931977]
+shape = SubResource("RectangleShape2D_u1fbc")
+
+[node name="Lights" type="Node2D" parent="." unique_id=1996859991]
+
+[node name="Light10" type="PointLight2D" parent="Lights" unique_id=230785390 instance=ExtResource("40_mlhww")]
+position = Vector2(301, 205)
+color = Color(1, 0.75, 0.45, 1)
+texture = ExtResource("41_1dp1l")
+script = ExtResource("42_efupg")
+base_energy = 0.8
+
+[node name="Effects" type="Node2D" parent="." unique_id=1496346844]
+
+[node name="Campfire3" type="Node2D" parent="Effects" unique_id=1049929852 instance=ExtResource("43_17vjd")]
+position = Vector2(128, 98)
+
+[node name="Bounds" type="StaticBody2D" parent="." unique_id=1227893402]
+collision_mask = 0
+
+[node name="Wall6" type="CollisionShape2D" parent="Bounds" unique_id=1571461235]
+position = Vector2(320, 45)
+shape = SubResource("RectangleShape2D_ejsbl")
+
+[node name="Wall7" type="CollisionShape2D" parent="Bounds" unique_id=1627733454]
+position = Vector2(16, 192)
+shape = SubResource("RectangleShape2D_48ihp")
+
+[node name="Wall8" type="CollisionShape2D" parent="Bounds" unique_id=1991983502]
+position = Vector2(624, 192)
+shape = SubResource("RectangleShape2D_3bmle")
+
+[node name="Wall9" type="CollisionShape2D" parent="Bounds" unique_id=1270586177]
+position = Vector2(320, 384)
+shape = SubResource("RectangleShape2D_f4fc5")
+
+[node name="Triggers" type="Node2D" parent="." unique_id=547493719]
+
+[node name="SpawnPoints" type="Node2D" parent="." unique_id=2141131026]
+
+[node name="bed" type="Marker2D" parent="SpawnPoints" unique_id=57124247]
+position = Vector2(467, 205)
+
+[node name="door" type="Marker2D" parent="SpawnPoints" unique_id=1765474687]
+position = Vector2(320, 333)
+
+[node name="respawn" type="Marker2D" parent="SpawnPoints" unique_id=1265358693]
+position = Vector2(467, 205)
+
+[node name="Markers" type="Node2D" parent="." unique_id=608493797]
+
+[node name="dinner_kai" type="Marker2D" parent="Markers" unique_id=1987032533]
+position = Vector2(301, 285)
+
+[node name="dinner_marta" type="Marker2D" parent="Markers" unique_id=713417515]
+position = Vector2(301, 198)
+
+[node name="dinner_gordey" type="Marker2D" parent="Markers" unique_id=1608185677]
+position = Vector2(352, 256)
+
+[node name="dinner_tim" type="Marker2D" parent="Markers" unique_id=1474612482]
+position = Vector2(250, 256)
+
+[node name="tim_bed" type="Marker2D" parent="Markers" unique_id=1886083590]
+position = Vector2(557, 179)
+
+[node name="night_kai" type="Marker2D" parent="Markers" unique_id=2129998121]
+position = Vector2(499, 198)

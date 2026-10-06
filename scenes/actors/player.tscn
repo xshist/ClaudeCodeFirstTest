@@ -1,0 +1,123 @@
+[gd_scene load_steps=16 format=3]
+
+[ext_resource type="Script" path="res://scripts/actors/player.gd" id="1_player"]
+[ext_resource type="Script" path="res://scripts/actors/lpc_sprite.gd" id="2_sprite"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/kai.png" id="3_sheet"]
+[ext_resource type="Texture2D" path="res://assets/sprites/fx/ash_flake.png" id="4_ash"]
+[ext_resource type="Texture2D" path="res://assets/sprites/fx/slash_arc.png" id="5_slash"]
+[ext_resource type="Texture2D" path="res://assets/sprites/fx/shadow.png" id="6_shadow"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_body"]
+size = Vector2(14, 8)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_interact"]
+radius = 30.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_attack"]
+radius = 20.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s0"]
+atlas = ExtResource("5_slash")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s1"]
+atlas = ExtResource("5_slash")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s2"]
+atlas = ExtResource("5_slash")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_slash"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s2")
+}],
+"loop": false,
+"name": &"swing",
+"speed": 18.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_ash"]
+offsets = PackedFloat32Array(0, 0.15, 0.8, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 0.85, 1, 1, 1, 0.6, 1, 1, 1, 0)
+
+[sub_resource type="Curve" id="Curve_ash_scale"]
+_data = [Vector2(0, 0.6), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="Player" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 5
+motion_mode = 1
+script = ExtResource("1_player")
+
+[node name="Shadow" type="Sprite2D" parent="."]
+texture = ExtResource("6_shadow")
+offset = Vector2(0, -2)
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+script = ExtResource("2_sprite")
+sheet = ExtResource("3_sheet")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_body")
+
+[node name="InteractionArea" type="Area2D" parent="."]
+position = Vector2(0, -10)
+collision_layer = 0
+collision_mask = 16
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+shape = SubResource("CircleShape2D_interact")
+
+[node name="AttackArea" type="Area2D" parent="."]
+position = Vector2(0, 14)
+collision_layer = 0
+collision_mask = 8
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
+shape = SubResource("CircleShape2D_attack")
+
+[node name="SlashFx" type="AnimatedSprite2D" parent="."]
+z_index = 1
+sprite_frames = SubResource("SpriteFrames_slash")
+animation = &"swing"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -16)
+zoom = Vector2(2, 2)
+position_smoothing_enabled = true
+position_smoothing_speed = 7.0
+
+[node name="AshFall" type="CPUParticles2D" parent="Camera2D"]
+z_index = 50
+amount = 90
+lifetime = 10.0
+preprocess = 10.0
+local_coords = false
+texture = ExtResource("4_ash")
+emission_shape = 3
+emission_rect_extents = Vector2(380, 230)
+direction = Vector2(0.4, 1)
+spread = 25.0
+gravity = Vector2(4, 9)
+initial_velocity_min = 6.0
+initial_velocity_max = 16.0
+angular_velocity_min = -60.0
+angular_velocity_max = 60.0
+scale_amount_min = 0.5
+scale_amount_max = 1.1
+scale_amount_curve = SubResource("Curve_ash_scale")
+color = Color(0.86, 0.84, 0.82, 0.75)
+color_ramp = SubResource("Gradient_ash")

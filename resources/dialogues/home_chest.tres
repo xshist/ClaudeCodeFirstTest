@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogueData" format=3]
+
+[ext_resource type="Script" path="res://resources/types/dialogue_data.gd" id="1_76l3y"]
+
+[resource]
+script = ExtResource("1_76l3y")
+id = &"home_chest"
+requires = PackedStringArray()
+script_text = "*: Сундук. Праздничная рубаха отца, мамины бусы и деревянная лошадка, из которой Тим давно вырос."

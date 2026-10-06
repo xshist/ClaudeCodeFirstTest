@@ -1,0 +1,20 @@
+# Godot 4
+.godot/
+/android/
+*.translation
+export_presets.cfg.bak
+
+# Build output
+/build/
+/screenshots/tmp/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.tmp
+__pycache__/
+
+# Кэш исходников LPC для tools/assets/*.py
+tools/assets/.cache/
+# Временные генераторы
+tools/_build/

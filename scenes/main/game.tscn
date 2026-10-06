@@ -1,0 +1,67 @@
+[gd_scene load_steps=12 format=3]
+
+[ext_resource type="Script" path="res://scripts/main/game.gd" id="1_game"]
+[ext_resource type="Script" path="res://scripts/world/day_tint.gd" id="2_tint"]
+[ext_resource type="Script" path="res://scripts/main/story_director.gd" id="3_director"]
+[ext_resource type="Shader" path="res://resources/shaders/grade.gdshader" id="4_grade"]
+[ext_resource type="PackedScene" path="res://scenes/ui/hud.tscn" id="5_hud"]
+[ext_resource type="PackedScene" path="res://scenes/ui/dialogue_box.tscn" id="6_dialogue"]
+[ext_resource type="PackedScene" path="res://scenes/ui/journal.tscn" id="7_journal"]
+[ext_resource type="PackedScene" path="res://scenes/ui/pause_menu.tscn" id="8_pause"]
+[ext_resource type="PackedScene" path="res://scenes/ui/chapter_card.tscn" id="9_card"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_grade"]
+shader = ExtResource("4_grade")
+shader_parameter/desaturation = 0.32
+shader_parameter/contrast = 1.06
+shader_parameter/shadow_tint = Color(0.16, 0.15, 0.22, 1)
+shader_parameter/highlight_tint = Color(1, 0.95, 0.88, 1)
+shader_parameter/vignette_strength = 0.5
+shader_parameter/grain_strength = 0.03
+
+[node name="Game" type="Node"]
+script = ExtResource("1_game")
+
+[node name="WorldRoot" type="Node2D" parent="."]
+
+[node name="DayTint" type="CanvasModulate" parent="."]
+script = ExtResource("2_tint")
+
+[node name="StoryDirector" type="Node" parent="."]
+script = ExtResource("3_director")
+
+[node name="PostFx" type="CanvasLayer" parent="."]
+layer = 5
+
+[node name="Grade" type="ColorRect" parent="PostFx"]
+material = SubResource("ShaderMaterial_grade")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="UI" type="CanvasLayer" parent="."]
+layer = 10
+
+[node name="Hud" parent="UI" instance=ExtResource("5_hud")]
+
+[node name="DialogueBox" parent="UI" instance=ExtResource("6_dialogue")]
+
+[node name="Journal" parent="UI" instance=ExtResource("7_journal")]
+
+[node name="PauseMenu" parent="UI" instance=ExtResource("8_pause")]
+
+[node name="Fade" type="ColorRect" parent="UI"]
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="ChapterCard" parent="UI" instance=ExtResource("9_card")]
+unique_name_in_owner = true

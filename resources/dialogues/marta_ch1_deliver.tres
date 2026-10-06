@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="DialogueData" format=3]
+
+[ext_resource type="Script" path="res://resources/types/dialogue_data.gd" id="1_bjew7"]
+
+[resource]
+script = ExtResource("1_bjew7")
+id = &"marta_ch1_deliver"
+requires = PackedStringArray("quest:morning_chores", "item:water_bucket")
+script_text = "marta: Принёс? Вот и молодец. Ставь у очага, только не расплескай.
+!sfx water
+!take water_bucket
+!set water_delivered
+!if rats_reported -> done
+marta: Теперь ступай к отцу. Он во дворе, у амбара. Опять, видно, крысы.
+-> end
+@done
+
+marta: Кай... А Тим так и не вернулся. Я думала, он с тобой.
+kai: Я его с утра не видел.
+marta: Опять, небось, к Тихому дому побежал — на серых глазеть. Сколько раз говорила!
+marta: Найди его и приведи домой. Сейчас же. Пока Серые братья его не заприметили.
+!quest_done morning_chores
+!quest_start find_tim
+!set tim_missing"

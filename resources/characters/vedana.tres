@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CharacterProfile" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/portraits/vedana.png" id="1_4lg7c"]
+[ext_resource type="Script" path="res://resources/types/character_profile.gd" id="2_fk1qb"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/vedana.png" id="3_3tvpd"]
+
+[resource]
+script = ExtResource("2_fk1qb")
+id = &"vedana"
+display_name = "Ведана"
+portrait = ExtResource("1_4lg7c")
+sheet = ExtResource("3_3tvpd")
+name_color = Color(0.62, 0.82, 0.6, 1)
+voice_pitch = 0.92

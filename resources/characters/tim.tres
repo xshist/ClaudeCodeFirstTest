@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CharacterProfile" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/portraits/tim.png" id="1_kg8ka"]
+[ext_resource type="Script" path="res://resources/types/character_profile.gd" id="2_ij6u3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/tim.png" id="3_xo6qv"]
+
+[resource]
+script = ExtResource("2_ij6u3")
+id = &"tim"
+display_name = "Тим"
+portrait = ExtResource("1_kg8ka")
+sheet = ExtResource("3_xo6qv")
+name_color = Color(0.68, 0.8, 0.96, 1)
+voice_pitch = 1.4

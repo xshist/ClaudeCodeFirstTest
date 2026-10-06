@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="DialogueData" format=3]
+
+[ext_resource type="Script" path="res://resources/types/dialogue_data.gd" id="1_ppu42"]
+
+[resource]
+script = ExtResource("1_ppu42")
+id = &"home_loom"
+requires = PackedStringArray()
+script_text = "!if chapter>=2 -> empty
+*: Ткацкий стан Марты. На нём — недотканный отрез серого сукна.
+-> end
+@empty
+*: Стан пуст. Сукно Марта доткала ещё вчера."

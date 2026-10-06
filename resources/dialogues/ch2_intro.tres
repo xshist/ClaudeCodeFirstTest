@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="DialogueData" format=3]
+
+[ext_resource type="Script" path="res://resources/types/dialogue_data.gd" id="1_w07m0"]
+
+[resource]
+script = ExtResource("1_w07m0")
+id = &"ch2_intro"
+requires = PackedStringArray()
+script_text = "*: Прошёл день. Пепел всё так же летит с холма, а отец кашляет всё чаще.
+marta: Кай, сукно я доткала. Отнеси Богдану на площадь — пусть даст хоть пять монет.
+marta: На выручку купи у Нюры хлеба. А потом зайди к Ведане, травнице. Пусть даст отвар от кашля.
+gordey: Кха... Да не нужен мне никакой отвар!
+marta: Нужен. Иди, Кай.
+!sfx cough
+!give cloth
+!quest_start bread_and_ash"

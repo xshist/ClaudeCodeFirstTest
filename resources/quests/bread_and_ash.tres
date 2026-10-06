@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="QuestData" format=3]
+
+[ext_resource type="Script" path="res://resources/types/quest_objective.gd" id="1_07hxw"]
+[ext_resource type="Script" path="res://resources/types/quest_data.gd" id="2_micmq"]
+
+[sub_resource type="Resource" id="Resource_jc2r5"]
+script = ExtResource("1_07hxw")
+text = "Продать сукно Богдану на площади"
+done_flag = &"cloth_sold"
+visible_when = PackedStringArray()
+
+[sub_resource type="Resource" id="Resource_xp3la"]
+script = ExtResource("1_07hxw")
+text = "Купить хлеб у Нюры"
+done_flag = &"bread_bought"
+visible_when = PackedStringArray()
+
+[sub_resource type="Resource" id="Resource_0pdqd"]
+script = ExtResource("1_07hxw")
+text = "Попросить отвар у травницы Веданы (юго-запад)"
+done_flag = &"vedana_asked"
+visible_when = PackedStringArray()
+
+[sub_resource type="Resource" id="Resource_fr5o4"]
+script = ExtResource("1_07hxw")
+text = "Собрать пепельник у южной опушки"
+counter = &"ashwort_collected"
+target = 3
+visible_when = PackedStringArray("vedana_asked")
+
+[sub_resource type="Resource" id="Resource_s6ooo"]
+script = ExtResource("1_07hxw")
+text = "Отнести пепельник Ведане"
+done_flag = &"medicine_got"
+visible_when = PackedStringArray("vedana_asked")
+
+[sub_resource type="Resource" id="Resource_hykjk"]
+script = ExtResource("1_07hxw")
+text = "Вернуться домой"
+done_flag = &"ch2_home"
+visible_when = PackedStringArray("bread_bought", "medicine_got")
+
+[resource]
+script = ExtResource("2_micmq")
+id = &"bread_and_ash"
+title = "Хлеб и пепел"
+description = "Марта доткала сукно. Его нужно продать, купить хлеба и раздобыть у травницы отвар для отца."
+objectives = Array[ExtResource("1_07hxw")]([SubResource("Resource_jc2r5"), SubResource("Resource_xp3la"), SubResource("Resource_0pdqd"), SubResource("Resource_fr5o4"), SubResource("Resource_s6ooo"), SubResource("Resource_hykjk")])

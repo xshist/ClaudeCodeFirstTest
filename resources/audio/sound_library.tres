@@ -1,0 +1,59 @@
+[gd_resource type="Resource" script_class="SoundLibrary" format=3]
+
+[ext_resource type="AudioStream" path="res://assets/audio/ambience/hearth.wav" id="1_mei8w"]
+[ext_resource type="AudioStream" path="res://assets/audio/ambience/wind.wav" id="2_i54dx"]
+[ext_resource type="AudioStream" path="res://assets/audio/music/home.wav" id="3_7qw84"]
+[ext_resource type="AudioStream" path="res://assets/audio/music/title.wav" id="4_my2ud"]
+[ext_resource type="AudioStream" path="res://assets/audio/music/village.wav" id="5_s6xj5"]
+[ext_resource type="Script" path="res://resources/types/sound_library.gd" id="6_hjkbo"]
+[ext_resource type="AudioStream" path="res://assets/audio/sfx/bell_toll.wav" id="7_scu8v"]
+[ext_resource type="AudioStream" path="res://assets/audio/sfx/coins.wav" id="8_p58vs"]
+[ext_resource type="AudioStream" path="res://assets/audio/sfx/cough.wav" id="9_qqb8v"]
+[ext_resource type="AudioStream" path="res://assets/audio/sfx/door.wav" id="10_5ebox"]
+[ext_resource type="AudioStream" path="res://assets/audio/sfx/hit.wav" id="11_mfa87"]
+[ext_resource type="AudioStream" path="res://assets/audio/sfx/hurt.wav" id="12_oroaa"]
+[ext_resource type="AudioStream" path="res://assets/audio/sfx/pickup.wav" id="13_0hc3c"]
+[ext_resource type="AudioStream" path="res://assets/audio/sfx/quest_done.wav" id="14_uy37w"]
+[ext_resource type="AudioStream" path="res://assets/audio/sfx/quest_update.wav" id="15_d4gof"]
+[ext_resource type="AudioStream" path="res://assets/audio/sfx/rat_die.wav" id="16_m64dm"]
+[ext_resource type="AudioStream" path="res://assets/audio/sfx/rat_squeak.wav" id="17_djtry"]
+[ext_resource type="AudioStream" path="res://assets/audio/sfx/swing.wav" id="18_7mud4"]
+[ext_resource type="AudioStream" path="res://assets/audio/sfx/text_blip.wav" id="19_p7hfy"]
+[ext_resource type="AudioStream" path="res://assets/audio/sfx/ui_click.wav" id="20_l300b"]
+[ext_resource type="AudioStream" path="res://assets/audio/sfx/ui_open.wav" id="21_hgrq3"]
+[ext_resource type="AudioStream" path="res://assets/audio/sfx/water.wav" id="22_36wv7"]
+
+[resource]
+script = ExtResource("6_hjkbo")
+sfx = Dictionary[StringName, AudioStream]({
+&"bell_toll": ExtResource("7_scu8v"),
+&"coins": ExtResource("8_p58vs"),
+&"cough": ExtResource("9_qqb8v"),
+&"door": ExtResource("10_5ebox"),
+&"hit": ExtResource("11_mfa87"),
+&"hurt": ExtResource("12_oroaa"),
+&"pickup": ExtResource("13_0hc3c"),
+&"quest_done": ExtResource("14_uy37w"),
+&"quest_update": ExtResource("15_d4gof"),
+&"rat_die": ExtResource("16_m64dm"),
+&"rat_squeak": ExtResource("17_djtry"),
+&"swing": ExtResource("18_7mud4"),
+&"text_blip": ExtResource("19_p7hfy"),
+&"ui_click": ExtResource("20_l300b"),
+&"ui_open": ExtResource("21_hgrq3"),
+&"water": ExtResource("22_36wv7")
+})
+music = Dictionary[StringName, AudioStream]({
+&"home": ExtResource("3_7qw84"),
+&"title": ExtResource("4_my2ud"),
+&"village": ExtResource("5_s6xj5")
+})
+ambience = Dictionary[StringName, AudioStream]({
+&"hearth": ExtResource("1_mei8w"),
+&"wind": ExtResource("2_i54dx")
+})
+sfx_volume_db = Dictionary[StringName, float]({
+&"bell_toll": 2.0,
+&"text_blip": -6.0,
+&"water": -3.0
+})

@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="DialogueData" format=3]
+
+[ext_resource type="Script" path="res://resources/types/dialogue_data.gd" id="1_qwuwc"]
+
+[resource]
+script = ExtResource("1_qwuwc")
+id = &"anselm_ch1"
+requires = PackedStringArray("chapter:1")
+script_text = "grey_brother: Мир тебе, сын Гордея.
+!if quest:find_tim !found_tim -> tim
+grey_brother: Ты пришёл за покоем? Нет... Не сегодня. У тебя ещё слишком живые глаза.
+-> end
+@tim
+grey_brother: Мальчик у изгороди — твой брат? Он часто приходит сюда. Любопытство — не грех.
+grey_brother: Но немощь любопытна не меньше. Уведи его.
+? Что там, внутри? -> inside
+? Уже увожу. -> end
+@inside
+grey_brother: Покой. Мы даём покой тем, кто перестал чувствовать.
+grey_brother: Когда-нибудь и ты поймёшь, что это — милость."

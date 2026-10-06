@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="DialogueData" format=3]
+
+[ext_resource type="Script" path="res://resources/types/dialogue_data.gd" id="1_oyh1k"]
+
+[resource]
+script = ExtResource("1_oyh1k")
+id = &"ivan_default"
+requires = PackedStringArray()
+script_text = "villager_man: Опять пепел. Бельё вешать бесполезно — всё серое.
+villager_man: Жена говорит: «пепел — к дождю». Третий год ждём."

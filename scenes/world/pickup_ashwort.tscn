@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://scripts/components/pickup.gd" id="1_pickup"]
+[ext_resource type="Texture2D" path="res://assets/sprites/props/herb_ashwort.png" id="2_tex"]
+[ext_resource type="Script" path="res://scripts/world/timed_light.gd" id="3_light"]
+[ext_resource type="Texture2D" path="res://assets/sprites/fx/soft_light.png" id="4_glow"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pickup"]
+radius = 14.0
+
+[node name="Ashwort" type="Area2D"]
+script = ExtResource("1_pickup")
+prompt = "Сорвать пепельник"
+item_id = &"ashwort"
+counter = &"ashwort_collected"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_tex")
+offset = Vector2(0, -14)
+
+[node name="Glow" type="PointLight2D" parent="."]
+position = Vector2(0, -10)
+color = Color(0.7, 0.82, 1, 1)
+energy = 0.5
+texture = ExtResource("4_glow")
+texture_scale = 0.35
+script = ExtResource("3_light")
+active_phases = Array[StringName]([])
+base_energy = 0.5
+flicker = 0.2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -8)
+shape = SubResource("CircleShape2D_pickup")

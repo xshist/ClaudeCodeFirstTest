@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="DialogueData" format=3]
+
+[ext_resource type="Script" path="res://resources/types/dialogue_data.gd" id="1_d8o2w"]
+
+[resource]
+script = ExtResource("1_d8o2w")
+id = &"ch1_tim_home"
+requires = PackedStringArray()
+script_text = "marta: Тимофей! Живой... Иди сюда, горе моё.
+tim: Мам, я только посмотреть хотел...
+marta: Посмотреть! Ещё раз к Тихому дому — запру в погребе до весны, слышишь?
+tim: Слышу...
+marta: Кай, спасибо. Не знаю, что бы я без тебя делала.
+*: Когда мать отворачивается, Тим шепчет брату:
+tim: Кай... Там, у Тихого дома, никто не плакал. Совсем никто. Даже те, кого туда привели.
+!event chapter_end_1"

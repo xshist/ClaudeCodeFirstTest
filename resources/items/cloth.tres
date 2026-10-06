@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemData" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/ui/icons/cloth.png" id="1_e3e42"]
+[ext_resource type="Script" path="res://resources/types/item_data.gd" id="2_3xi74"]
+
+[resource]
+script = ExtResource("2_3xi74")
+id = &"cloth"
+display_name = "Сукно Марты"
+description = "Отрез серого сукна. Марта ткала его две недели."
+icon = ExtResource("1_e3e42")
+price = 5

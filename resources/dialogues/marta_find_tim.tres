@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogueData" format=3]
+
+[ext_resource type="Script" path="res://resources/types/dialogue_data.gd" id="1_ueyaa"]
+
+[resource]
+script = ExtResource("1_ueyaa")
+id = &"marta_find_tim"
+requires = PackedStringArray("quest:find_tim")
+script_text = "marta: Ну что стоишь? Тихий дом — на восточной окраине, за площадью. Приведи Тима!"

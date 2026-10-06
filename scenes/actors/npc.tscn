@@ -1,0 +1,57 @@
+[gd_scene load_steps=8 format=3]
+
+[ext_resource type="Script" path="res://scripts/actors/npc.gd" id="1_npc"]
+[ext_resource type="Script" path="res://scripts/actors/lpc_sprite.gd" id="2_sprite"]
+[ext_resource type="Script" path="res://scripts/components/interactable.gd" id="3_interact"]
+[ext_resource type="Texture2D" path="res://assets/sprites/fx/shadow.png" id="4_shadow"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_body"]
+size = Vector2(16, 8)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_talk"]
+radius = 16.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_bark"]
+font_size = 16
+font_color = Color(0.92, 0.9, 0.84, 1)
+outline_size = 6
+outline_color = Color(0.05, 0.04, 0.05, 1)
+
+[node name="Npc" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 3
+motion_mode = 1
+script = ExtResource("1_npc")
+
+[node name="Shadow" type="Sprite2D" parent="."]
+texture = ExtResource("4_shadow")
+offset = Vector2(0, -2)
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+script = ExtResource("2_sprite")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_body")
+
+[node name="TalkArea" type="Area2D" parent="."]
+position = Vector2(0, -12)
+script = ExtResource("3_interact")
+prompt = "Говорить"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TalkArea"]
+shape = SubResource("CircleShape2D_talk")
+
+[node name="BarkLabel" type="Label" parent="."]
+z_index = 40
+offset_left = -160.0
+offset_top = -96.0
+offset_right = 160.0
+offset_bottom = -62.0
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(160, 34)
+text = "..."
+label_settings = SubResource("LabelSettings_bark")
+horizontal_alignment = 1
+vertical_alignment = 2
+autowrap_mode = 3

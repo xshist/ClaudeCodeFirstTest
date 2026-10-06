@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CharacterProfile" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/portraits/lukash.png" id="1_ggrn0"]
+[ext_resource type="Script" path="res://resources/types/character_profile.gd" id="2_dqkrw"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/lukash.png" id="3_0ys57"]
+
+[resource]
+script = ExtResource("2_dqkrw")
+id = &"lukash"
+display_name = "Лукаш"
+portrait = ExtResource("1_ggrn0")
+sheet = ExtResource("3_0ys57")
+name_color = Color(0.62, 0.65, 0.7, 1)
+voice_pitch = 0.72

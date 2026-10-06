@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/ui/icons/bucket.png" id="1_roi0v"]
+[ext_resource type="Script" path="res://resources/types/item_data.gd" id="2_tqw18"]
+
+[resource]
+script = ExtResource("2_tqw18")
+id = &"bucket"
+display_name = "Пустое ведро"
+description = "Старое дубовое ведро. Подтекает, если долго нести."
+icon = ExtResource("1_roi0v")

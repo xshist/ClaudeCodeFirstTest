@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="DialogueData" format=3]
+
+[ext_resource type="Script" path="res://resources/types/dialogue_data.gd" id="1_sp05e"]
+
+[resource]
+script = ExtResource("1_sp05e")
+id = &"guard_default"
+requires = PackedStringArray()
+script_text = "guard: Стой. Дальше нельзя — дорога на Карнхольд закрыта.
+guard: Приказ бургомистра: пока немощь в Броде, ни одна душа не пройдёт.
+? А если человек здоров? -> healthy
+? Понятно. -> end
+@healthy
+guard: Здоровых, парень, сейчас не бывает. Бывают ещё не серые."

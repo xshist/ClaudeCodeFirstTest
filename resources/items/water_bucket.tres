@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/ui/icons/water_bucket.png" id="1_macay"]
+[ext_resource type="Script" path="res://resources/types/item_data.gd" id="2_k7tj1"]
+
+[resource]
+script = ExtResource("2_k7tj1")
+id = &"water_bucket"
+display_name = "Ведро воды"
+description = "Ледяная колодезная вода. Пахнет железом."
+icon = ExtResource("1_macay")

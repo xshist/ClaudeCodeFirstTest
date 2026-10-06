@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogueData" format=3]
+
+[ext_resource type="Script" path="res://resources/types/dialogue_data.gd" id="1_ibujr"]
+
+[resource]
+script = ExtResource("1_ibujr")
+id = &"barn_rats"
+requires = PackedStringArray("talked_father_rats", "!rats_done")
+script_text = "*: Из-за мешков доносятся писк и шорох. Крысы где-то здесь, за изгородью."

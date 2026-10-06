@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="DialogueData" format=3]
+
+[ext_resource type="Script" path="res://resources/types/dialogue_data.gd" id="1_aninb"]
+
+[resource]
+script = ExtResource("1_aninb")
+id = &"vedana_give"
+requires = PackedStringArray("quest:bread_and_ash", "herbs_done", "!medicine_got")
+script_text = "vedana: Хорошие стебли. Видишь, как светятся? Пепельник растёт там, где земля пила пепел.
+vedana: ...Кай. Покажи-ка руки.
+kai: Зачем?
+vedana: Просто покажи.
+*: Её пальцы холодные и сухие. Она долго смотрит на твои ладони, потом на запястья.
+vedana: Чистые. Хорошо. Странно... но хорошо.
+vedana: Держи отвар. Отцу — по глотку на ночь. И не бойся: немощь не кашляет. Немощь молчит.
+!take ashwort 3
+!give medicine
+!set medicine_got"

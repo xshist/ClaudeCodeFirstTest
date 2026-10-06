@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogueData" format=3]
+
+[ext_resource type="Script" path="res://resources/types/dialogue_data.gd" id="1_gqkhj"]
+
+[resource]
+script = ExtResource("1_gqkhj")
+id = &"home_hearth"
+requires = PackedStringArray()
+script_text = "*: Очаг потрескивает. Над огнём — котелок со вчерашней похлёбкой."

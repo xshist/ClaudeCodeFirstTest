@@ -1,0 +1,148 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/journal.gd" id="1_journal"]
+[ext_resource type="Texture2D" path="res://assets/ui/art/hero_kai.png" id="2_hero"]
+
+[node name="Journal" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_journal")
+
+[node name="Dim" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.62)
+
+[node name="Panel" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -480.0
+offset_top = -300.0
+offset_right = 480.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="Panel"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Header" type="Label" parent="Panel/VBox"]
+layout_mode = 2
+theme_type_variation = &"HeaderLabel"
+theme_override_font_sizes/font_size = 30
+text = "Дневник Кая"
+horizontal_alignment = 1
+
+[node name="Tabs" type="TabContainer" parent="Panel/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+current_tab = 0
+
+[node name="Задания" type="ScrollContainer" parent="Panel/VBox/Tabs"]
+layout_mode = 2
+horizontal_scroll_mode = 0
+metadata/_tab_index = 0
+
+[node name="QuestList" type="VBoxContainer" parent="Panel/VBox/Tabs/Задания"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 6
+
+[node name="Сумка" type="HBoxContainer" parent="Panel/VBox/Tabs"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 24
+metadata/_tab_index = 1
+
+[node name="ItemGrid" type="GridContainer" parent="Panel/VBox/Tabs/Сумка"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 8
+columns = 6
+
+[node name="Info" type="VBoxContainer" parent="Panel/VBox/Tabs/Сумка"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+
+[node name="ItemName" type="Label" parent="Panel/VBox/Tabs/Сумка/Info"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"HeaderLabel"
+
+[node name="ItemDescription" type="Label" parent="Panel/VBox/Tabs/Сумка/Info"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(320, 0)
+layout_mode = 2
+autowrap_mode = 3
+
+[node name="CoinsLabel" type="Label" parent="Panel/VBox/Tabs/Сумка/Info"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.85, 0.7, 0.4, 1)
+text = "Монеты: 0"
+
+[node name="Кай" type="HBoxContainer" parent="Panel/VBox/Tabs"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 24
+metadata/_tab_index = 2
+
+[node name="HeroArt" type="TextureRect" parent="Panel/VBox/Tabs/Кай"]
+custom_minimum_size = Vector2(320, 320)
+layout_mode = 2
+size_flags_vertical = 0
+texture = ExtResource("2_hero")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Info" type="VBoxContainer" parent="Panel/VBox/Tabs/Кай"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 12
+
+[node name="HeroName" type="Label" parent="Panel/VBox/Tabs/Кай/Info"]
+layout_mode = 2
+theme_type_variation = &"HeaderLabel"
+theme_override_font_sizes/font_size = 30
+text = "Кай, сын Гордея"
+
+[node name="Bio" type="Label" parent="Panel/VBox/Tabs/Кай/Info"]
+custom_minimum_size = Vector2(440, 0)
+layout_mode = 2
+theme_type_variation = &"SmallLabel"
+text = "Семнадцать лет назад плотник Гордей нашёл младенца на пепелище сгоревшего хутора и принёс домой, к Марте. Так у Вязового Брода появился Кай.
+
+Он колет дрова, чинит изгороди и присматривает за младшим братом Тимом — тот вечно лезет туда, куда нельзя."
+autowrap_mode = 3
+
+[node name="HeroStats" type="Label" parent="Panel/VBox/Tabs/Кай/Info"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.85, 0.7, 0.55, 1)
+text = "Здоровье: 6 / 6"
+
+[node name="Footer" type="Label" parent="Panel/VBox"]
+layout_mode = 2
+theme_type_variation = &"SmallLabel"
+theme_override_colors/font_color = Color(0.6, 0.57, 0.52, 1)
+text = "Tab — закрыть · ←/→ — вкладки"
+horizontal_alignment = 1

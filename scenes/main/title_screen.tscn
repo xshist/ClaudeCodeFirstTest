@@ -1,0 +1,207 @@
+[gd_scene load_steps=7 format=3]
+
+[ext_resource type="Script" path="res://scripts/main/title_screen.gd" id="1_title"]
+[ext_resource type="Texture2D" path="res://assets/ui/art/title_castle.webp" id="2_art"]
+[ext_resource type="Texture2D" path="res://assets/sprites/fx/rain_drop.png" id="3_rain"]
+
+[sub_resource type="Gradient" id="Gradient_shade"]
+offsets = PackedFloat32Array(0, 0.55, 1)
+colors = PackedColorArray(0.02, 0.01, 0.02, 0.92, 0.02, 0.01, 0.02, 0.55, 0.02, 0.01, 0.02, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_shade"]
+gradient = SubResource("Gradient_shade")
+width = 256
+height = 16
+
+[sub_resource type="Gradient" id="Gradient_rain"]
+offsets = PackedFloat32Array(0, 0.2, 0.85, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[node name="TitleScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_title")
+
+[node name="Black" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Art" type="TextureRect" parent="."]
+unique_name_in_owner = true
+modulate = Color(0.78, 0.76, 0.8, 1)
+layout_mode = 0
+offset_right = 1340.0
+offset_bottom = 720.0
+texture = ExtResource("2_art")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Rain" type="CPUParticles2D" parent="."]
+position = Vector2(700, -30)
+amount = 220
+lifetime = 1.4
+preprocess = 2.0
+texture = ExtResource("3_rain")
+emission_shape = 3
+emission_rect_extents = Vector2(760, 10)
+direction = Vector2(-0.18, 1)
+spread = 2.0
+gravity = Vector2(-60, 420)
+initial_velocity_min = 380.0
+initial_velocity_max = 520.0
+color = Color(0.8, 0.85, 0.95, 0.35)
+color_ramp = SubResource("Gradient_rain")
+
+[node name="Shade" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 900.0
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_shade")
+expand_mode = 1
+
+[node name="Menu" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 90.0
+offset_top = 120.0
+offset_right = 720.0
+offset_bottom = 640.0
+theme_override_constants/separation = 12
+
+[node name="Title" type="Label" parent="Menu"]
+layout_mode = 2
+theme_type_variation = &"TitleLabel"
+theme_override_font_sizes/font_size = 80
+text = "ПЕПЕЛ И КРОВЬ"
+
+[node name="Subtitle" type="Label" parent="Menu"]
+layout_mode = 2
+theme_type_variation = &"HeaderLabel"
+theme_override_colors/font_color = Color(0.78, 0.3, 0.24, 1)
+theme_override_font_sizes/font_size = 28
+text = "Акт I · Мир, который ломается"
+
+[node name="Spacer" type="Control" parent="Menu"]
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+
+[node name="ContinueButton" type="Button" parent="Menu"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(320, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Продолжить"
+alignment = 0
+
+[node name="NewGameButton" type="Button" parent="Menu"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(320, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Новая игра"
+alignment = 0
+
+[node name="CreditsButton" type="Button" parent="Menu"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(320, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Авторы"
+alignment = 0
+
+[node name="QuitButton" type="Button" parent="Menu"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(320, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Выход"
+alignment = 0
+
+[node name="Version" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -520.0
+offset_top = -40.0
+offset_right = -20.0
+offset_bottom = -14.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_type_variation = &"SmallLabel"
+theme_override_colors/font_color = Color(0.62, 0.6, 0.58, 0.9)
+text = "Пролог: главы 1–2 · Godot 4.7"
+horizontal_alignment = 2
+
+[node name="CreditsPanel" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -420.0
+offset_top = -280.0
+offset_right = 420.0
+offset_bottom = 280.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="CreditsPanel"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Header" type="Label" parent="CreditsPanel/VBox"]
+layout_mode = 2
+theme_type_variation = &"HeaderLabel"
+theme_override_font_sizes/font_size = 30
+text = "Авторы"
+horizontal_alignment = 1
+
+[node name="Text" type="RichTextLabel" parent="CreditsPanel/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 19
+bbcode_enabled = true
+text = "[b]Графика персонажей и мира[/b] — Liberated Pixel Cup (LPC):
+• Universal LPC Spritesheet Character Generator (sanderfrenken и авторы) — CC-BY-SA 3.0 / GPL 3.0 / OGA-BY 3.0
+• LPC Revised (Eliza Wyatt и авторы) — CC-BY 3.0 / OGA-BY 3.0
+Полный список авторов — в файле CREDITS.md.
+
+[b]Шрифты[/b] — Alegreya, Alegreya Sans, Alegreya SC (Huerta Tipográfica), SIL Open Font License 1.1.
+
+[b]Иллюстрации меню и глав[/b] — референсы автора проекта.
+
+[b]Музыка и звуки[/b] — сгенерированы процедурно (tools/assets/build_audio.py).
+
+[b]Движок[/b] — Godot Engine 4.7."
+
+[node name="CreditsClose" type="Button" parent="CreditsPanel/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Закрыть"
+
+[node name="Fade" type="ColorRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)

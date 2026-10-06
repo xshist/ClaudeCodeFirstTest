@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="DialogueData" format=3]
+
+[ext_resource type="Script" path="res://resources/types/dialogue_data.gd" id="1_yllnk"]
+
+[resource]
+script = ExtResource("1_yllnk")
+id = &"asya_hint"
+requires = PackedStringArray("quest:find_tim", "!found_tim")
+script_text = "asya: Ты Тима ищешь? Он к Тихому дому побежал, я видела! На восток, за площадь.
+asya: Только не говори, что это я сказала. Он обидится."

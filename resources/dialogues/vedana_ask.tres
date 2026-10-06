@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="DialogueData" format=3]
+
+[ext_resource type="Script" path="res://resources/types/dialogue_data.gd" id="1_1xs1s"]
+
+[resource]
+script = ExtResource("1_1xs1s")
+id = &"vedana_ask"
+requires = PackedStringArray("quest:bread_and_ash", "!vedana_asked")
+script_text = "vedana: Сын Гордея. Знаю, зачем пришёл. Отец кашляет?
+kai: Третий день. Мать боится, что это... немощь.
+vedana: Сухо кашляет или с хрипом?
+kai: С хрипом.
+vedana: Значит, не немощь. Немощь не кашляет. Немощь молчит.
+vedana: Отвар сделаю. Но пепельник у меня кончился. Он растёт у южной опушки — серебристые стебли, ни с чем не спутаешь.
+vedana: Принеси три. И будь осторожен: крысы там нынче странные. Серые. От человека не бегут.
+!set vedana_asked
+!event vedana_asked"

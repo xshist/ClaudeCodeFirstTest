@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="DialogueData" format=3]
+
+[ext_resource type="Script" path="res://resources/types/dialogue_data.gd" id="1_nqv0h"]
+
+[resource]
+script = ExtResource("1_nqv0h")
+id = &"asya_default"
+requires = PackedStringArray()
+script_text = "!if chapter:2 -> ch2
+asya: Тим обещал показать мне серого. А мама говорит — на серых смотреть нельзя.
+-> end
+@ch2
+asya: А Тим выйдет играть? Нет? Ну и ладно..."

@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="DialogueData" format=3]
+
+[ext_resource type="Script" path="res://resources/types/dialogue_data.gd" id="1_uiq80"]
+
+[resource]
+script = ExtResource("1_uiq80")
+id = &"ch2_dinner"
+requires = PackedStringArray()
+script_text = "marta: Хлеб! И отвар... Кай, ты наш кормилец.
+gordey: (отпивает) Горько, как совесть ростовщика. ...Спасибо, сын.
+*: За окном догорает вечер. В очаге потрескивают поленья. Впервые за день тихо.
+tim: Кай... Колокол сегодня звонил. Это за Лукашем, да?
+? Да. -> yes
+? Ешь, Тим. -> eat
+@yes
+kai: Да. Его увели в Тихий дом.
+tim: Он был добрый. Он мне свистульку вырезал.
+-> after
+@eat
+tim: Я не маленький. Я знаю: колокол — значит, за кем-то пришли.
+@after
+marta: Хватит о серых за столом. Ешьте.
+!take bread
+!take medicine
+!set ch2_home
+!quest_done bread_and_ash
+!event dinner_done"

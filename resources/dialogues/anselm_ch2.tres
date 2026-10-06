@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="DialogueData" format=3]
+
+[ext_resource type="Script" path="res://resources/types/dialogue_data.gd" id="1_kw38m"]
+
+[resource]
+script = ExtResource("1_kw38m")
+id = &"anselm_ch2"
+requires = PackedStringArray()
+script_text = "!if lukash_gone -> after
+grey_brother: Ступай с миром, сын Гордея. Сегодня колокол звонит не по тебе.
+-> end
+@after
+grey_brother: Лукаш обрёл покой. Не держи на нас зла. Мы лишь делаем то, на что у других не хватает смелости."

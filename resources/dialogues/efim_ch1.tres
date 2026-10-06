@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="DialogueData" format=3]
+
+[ext_resource type="Script" path="res://resources/types/dialogue_data.gd" id="1_mjaft"]
+
+[resource]
+script = ExtResource("1_mjaft")
+id = &"efim_ch1"
+requires = PackedStringArray("chapter:1")
+script_text = "efim: Утро, Кай. Видал, как с холма пепел несёт? Это Серые братья ночью опять жгли.
+efim: Раньше, помню, по одному в месяц. А теперь — что ни ночь, то костёр.
+? Кого жгли? -> who
+? Не начинай, дед. -> stop
+@who
+efim: А кто ж их знает. Братья имён не говорят. Забирают — и всё. Был человек — стал пепел.
+efim: Ты Лукаша-то видал? Сидит у своего порога третий день. Серый весь. Скоро и за ним придут.
+-> end
+@stop
+efim: Молодые... Всё вам «не начинай». А пепел — он ничей. Он и на тебя сыплется."

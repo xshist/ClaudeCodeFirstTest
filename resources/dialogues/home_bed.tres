@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="DialogueData" format=3]
+
+[ext_resource type="Script" path="res://resources/types/dialogue_data.gd" id="1_bvtqs"]
+
+[resource]
+script = ExtResource("1_bvtqs")
+id = &"home_bed"
+requires = PackedStringArray()
+script_text = "!if time:night -> night
+*: Жёсткий соломенный тюфяк. Спать ещё рано.
+-> end
+@night
+*: Глаза слипаются, но сон не идёт."

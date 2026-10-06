@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="DialogueData" format=3]
+
+[ext_resource type="Script" path="res://resources/types/dialogue_data.gd" id="1_gdkma"]
+
+[resource]
+script = ExtResource("1_gdkma")
+id = &"marta_ch1_waiting"
+requires = PackedStringArray("quest:morning_chores")
+script_text = "!if water_delivered -> after_water
+marta: Колодец — на площади, за старым вязом. Ведро у тебя.
+-> end
+@after_water
+marta: Спасибо за воду. Помоги отцу с амбаром — он сам не справится, хоть и не признается."

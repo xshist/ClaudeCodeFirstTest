@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="EnemyStats" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://resources/types/enemy_stats.gd" id="1_stats"]
+
+[resource]
+script = ExtResource("1_stats")
+id = &"rat_grey"
+max_health = 3
+wander_speed = 22.0
+chase_speed = 62.0
+aggro_radius = 130.0
+give_up_radius = 260.0
+contact_damage = 1
+attack_cooldown = 1.0
+knockback_taken = 0.6
+kill_counter = &"grey_rats_killed"

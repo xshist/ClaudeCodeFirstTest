@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogueData" format=3]
+
+[ext_resource type="Script" path="res://resources/types/dialogue_data.gd" id="1_o7mri"]
+
+[resource]
+script = ExtResource("1_o7mri")
+id = &"marta_ch2_waiting"
+requires = PackedStringArray("quest:bread_and_ash")
+script_text = "marta: Сукно — Богдану, хлеб — у Нюры, отвар — у Веданы. Ничего не перепутай, кормилец."

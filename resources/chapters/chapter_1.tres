@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ChapterData" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/ui/art/chapter_village.webp" id="1_ioalf"]
+[ext_resource type="Script" path="res://resources/types/chapter_data.gd" id="2_pso21"]
+
+[resource]
+script = ExtResource("2_pso21")
+act_title = "Акт I. Мир, который ломается"
+title = "Обычная жизнь"
+epigraph = "«Пепел — к дождю», — говорят в Вязовом Броде.
+Пепел сыплется третий год. Дождя всё нет."
+art = ExtResource("1_ioalf")

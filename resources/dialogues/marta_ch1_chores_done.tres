@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="DialogueData" format=3]
+
+[ext_resource type="Script" path="res://resources/types/dialogue_data.gd" id="1_84vbm"]
+
+[resource]
+script = ExtResource("1_84vbm")
+id = &"marta_ch1_chores_done"
+requires = PackedStringArray("quest:morning_chores", "water_delivered", "rats_reported")
+script_text = "marta: Кай... А Тим так и не вернулся. Я думала, он с тобой.
+kai: Я его с утра не видел.
+marta: Опять, небось, к Тихому дому побежал — на серых глазеть. Сколько раз говорила!
+marta: Найди его и приведи домой. Сейчас же. Пока Серые братья его не заприметили.
+!quest_done morning_chores
+!quest_start find_tim
+!set tim_missing"

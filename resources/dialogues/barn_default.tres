@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="DialogueData" format=3]
+
+[ext_resource type="Script" path="res://resources/types/dialogue_data.gd" id="1_tc48u"]
+
+[resource]
+script = ExtResource("1_tc48u")
+id = &"barn_default"
+requires = PackedStringArray()
+script_text = "!if rats_done -> quiet
+*: Амбар. Отец хранит здесь зерно, сено и всё, что жалко выбросить.
+-> end
+@quiet
+*: В амбаре тихо. Пахнет мышами и прелым зерном."

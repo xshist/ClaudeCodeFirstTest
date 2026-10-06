@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="DialogueData" format=3]
+
+[ext_resource type="Script" path="res://resources/types/dialogue_data.gd" id="1_wjxkv"]
+
+[resource]
+script = ExtResource("1_wjxkv")
+id = &"ch1_intro"
+requires = PackedStringArray()
+script_text = "*: Утро в Вязовом Броде начинается с пепла. Он оседает на подоконниках, на крышах, на волосах.
+*: Здесь к нему давно привыкли.
+marta: Проснулся наконец. Тим уже убежал куда-то — я и не заметила когда.
+marta: В доме ни капли воды. Возьми ведро и сходи к колодцу на площади.
+marta: И загляни к отцу во двор — он с утра бранится на амбар.
+? Сейчас, мама. -> ok
+? А завтракать? -> food
+@food
+marta: Хлеба — полкаравая на всех. Принесёшь воды — сварю похлёбку.
+@ok
+!give bucket
+!quest_start morning_chores"

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CharacterProfile" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/portraits/gordey.png" id="1_p1rdg"]
+[ext_resource type="Script" path="res://resources/types/character_profile.gd" id="2_nx3g1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/gordey.png" id="3_4prwu"]
+
+[resource]
+script = ExtResource("2_nx3g1")
+id = &"gordey"
+display_name = "Гордей"
+portrait = ExtResource("1_p1rdg")
+sheet = ExtResource("3_4prwu")
+name_color = Color(0.78, 0.72, 0.6, 1)
+voice_pitch = 0.78

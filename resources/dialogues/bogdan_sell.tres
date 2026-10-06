@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="DialogueData" format=3]
+
+[ext_resource type="Script" path="res://resources/types/dialogue_data.gd" id="1_e2iop"]
+
+[resource]
+script = ExtResource("1_e2iop")
+id = &"bogdan_sell"
+requires = PackedStringArray("item:cloth")
+script_text = "bogdan: О, Марта сукно доткала? Покажи-ка.
+bogdan: Доброе сукно. Только кому сейчас ткань нужна? Город закрыт, купцов нет.
+bogdan: Четыре монеты.
+? Мать просила пять. -> five
+? Давай четыре. -> four
+@five
+bogdan: Пять... Ох, Кай. Ладно. Ради Гордея — пять.
+!take cloth
+!give coin 5
+!set cloth_sold
+-> end
+@four
+bogdan: Вот и договорились.
+!take cloth
+!give coin 4
+!set cloth_sold"

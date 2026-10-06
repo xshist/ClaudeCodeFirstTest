@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="DialogueData" format=3]
+
+[ext_resource type="Script" path="res://resources/types/dialogue_data.gd" id="1_snmy3"]
+
+[resource]
+script = ExtResource("1_snmy3")
+id = &"tim_home"
+requires = PackedStringArray()
+script_text = "!if time:night -> night
+!if ch2_home -> evening
+tim: Кай, возьми меня с собой на площадь! Ну пожалуйста!
+kai: Мать не пустит. Сиди дома.
+tim: Ску-учно...
+-> end
+@evening
+tim: Кай, а Ведана правда ведьма? Ася говорит, у неё кошка разговаривает.
+-> end
+@night
+tim: (сопит)"

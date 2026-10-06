@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ChapterData" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/ui/art/chapter_home.webp" id="1_weldv"]
+[ext_resource type="Script" path="res://resources/types/chapter_data.gd" id="2_r2fqa"]
+
+[resource]
+script = ExtResource("2_r2fqa")
+number = 2
+act_title = "Акт I. Мир, который ломается"
+title = "Хлеб и пепел"
+epigraph = "Колокол Серых братьев звонит не по мёртвым.
+Он звонит по тем, кто перестал чувствовать."
+art = ExtResource("1_weldv")
+time_of_day = &"day"

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogueData" format=3]
+
+[ext_resource type="Script" path="res://resources/types/dialogue_data.gd" id="1_erne8"]
+
+[resource]
+script = ExtResource("1_erne8")
+id = &"home_workbench"
+requires = PackedStringArray()
+script_text = "*: Верстак отца. Рубанки, долота и недоделанная колыбель — заказ, за который никто уже не заплатит."

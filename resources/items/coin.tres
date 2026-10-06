@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/ui/icons/coin.png" id="1_nba5c"]
+[ext_resource type="Script" path="res://resources/types/item_data.gd" id="2_v0upb"]
+
+[resource]
+script = ExtResource("2_v0upb")
+id = &"coin"
+display_name = "Монета"
+description = "Медная монета Карнхольда. Их всё меньше, а хлеб всё дороже."
+icon = ExtResource("1_nba5c")
+price = 1
+show_in_inventory = false

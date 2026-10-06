@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CharacterProfile" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/portraits/bogdan.png" id="1_t0xrc"]
+[ext_resource type="Script" path="res://resources/types/character_profile.gd" id="2_cbe6p"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/bogdan.png" id="3_pr35v"]
+
+[resource]
+script = ExtResource("2_cbe6p")
+id = &"bogdan"
+display_name = "Богдан"
+portrait = ExtResource("1_t0xrc")
+sheet = ExtResource("3_pr35v")
+name_color = Color(0.82, 0.7, 0.48, 1)
+voice_pitch = 0.9

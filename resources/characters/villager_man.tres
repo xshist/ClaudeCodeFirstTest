@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CharacterProfile" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/portraits/villager_man.png" id="1_y2crq"]
+[ext_resource type="Script" path="res://resources/types/character_profile.gd" id="2_fb1do"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/villager_man.png" id="3_ugxnv"]
+
+[resource]
+script = ExtResource("2_fb1do")
+id = &"villager_man"
+display_name = "Иван"
+portrait = ExtResource("1_y2crq")
+sheet = ExtResource("3_ugxnv")
+name_color = Color(0.7, 0.75, 0.8, 1)
+voice_pitch = 0.95

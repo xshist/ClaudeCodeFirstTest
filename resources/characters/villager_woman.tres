@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CharacterProfile" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/portraits/villager_woman.png" id="1_5u283"]
+[ext_resource type="Script" path="res://resources/types/character_profile.gd" id="2_yix7j"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/villager_woman.png" id="3_i64lr"]
+
+[resource]
+script = ExtResource("2_yix7j")
+id = &"villager_woman"
+display_name = "Ольга"
+portrait = ExtResource("1_5u283")
+sheet = ExtResource("3_i64lr")
+name_color = Color(0.7, 0.82, 0.68, 1)
+voice_pitch = 1.12

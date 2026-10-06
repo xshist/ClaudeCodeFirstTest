@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CharacterProfile" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/portraits/grey_brother.png" id="1_npekq"]
+[ext_resource type="Script" path="res://resources/types/character_profile.gd" id="2_saaso"]
+[ext_resource type="Texture2D" path="res://assets/sprites/characters/grey_brother.png" id="3_mtxx8"]
+
+[resource]
+script = ExtResource("2_saaso")
+id = &"grey_brother_2"
+display_name = "Серый брат"
+portrait = ExtResource("1_npekq")
+sheet = ExtResource("3_mtxx8")
+name_color = Color(0.66, 0.66, 0.7, 1)
+voice_pitch = 0.62

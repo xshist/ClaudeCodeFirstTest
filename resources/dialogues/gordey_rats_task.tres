@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="DialogueData" format=3]
+
+[ext_resource type="Script" path="res://resources/types/dialogue_data.gd" id="1_5jjex"]
+
+[resource]
+script = ExtResource("1_5jjex")
+id = &"gordey_rats_task"
+requires = PackedStringArray("quest:morning_chores", "!talked_father_rats")
+script_text = "gordey: А, Кай. Слышишь? Шуршат.
+gordey: Опять крысы в амбаре. Последнее зерно жрут, твари.
+gordey: Мне с моей ногой за ними не угнаться. Бери палку — вон, из поленницы, — и выгони их. Насмерть, понял?
+? Понял, отец. -> ok
+? А может, кошку завести? -> cat
+@cat
+gordey: Была кошка. Посерела и ушла в лес. Даже кошки, Кай...
+gordey: Бери палку.
+@ok
+!give stick
+!set talked_father_rats
+!event barn_rats"

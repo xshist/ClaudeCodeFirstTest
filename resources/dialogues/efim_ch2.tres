@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="DialogueData" format=3]
+
+[ext_resource type="Script" path="res://resources/types/dialogue_data.gd" id="1_jbgqk"]
+
+[resource]
+script = ExtResource("1_jbgqk")
+id = &"efim_ch2"
+requires = PackedStringArray()
+script_text = "!if lukash_gone -> after
+efim: Слыхал? Говорят, в Карнхольде тоже серых видели. А нас всё одно не пускают — мол, зараза от нас.
+efim: Будто немощь у ворот спрашивает, кому куда можно.
+-> end
+@after
+efim: Увели Лукаша... Тридцать лет его знал. А он даже не обернулся."

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="DialogueData" format=3]
+
+[ext_resource type="Script" path="res://resources/types/dialogue_data.gd" id="1_2iq7y"]
+
+[resource]
+script = ExtResource("1_2iq7y")
+id = &"ch2_after_bell"
+requires = PackedStringArray()
+script_text = "*: Колокол смолк. Ставни открываются одна за другой, будто ничего не случилось.
+*: Пора домой."

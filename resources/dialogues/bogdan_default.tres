@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="DialogueData" format=3]
+
+[ext_resource type="Script" path="res://resources/types/dialogue_data.gd" id="1_gbs7s"]
+
+[resource]
+script = ExtResource("1_gbs7s")
+id = &"bogdan_default"
+requires = PackedStringArray()
+script_text = "!if chapter:1 -> ch1
+bogdan: Покупаю ткань, шерсть, лён. Продаю — то, что осталось. А осталось немного.
+-> end
+@ch1
+bogdan: Рано ты, Кай. Торговли нет — обоз из города третью неделю не приходит."

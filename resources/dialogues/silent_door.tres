@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogueData" format=3]
+
+[ext_resource type="Script" path="res://resources/types/dialogue_data.gd" id="1_4qvq8"]
+
+[resource]
+script = ExtResource("1_4qvq8")
+id = &"silent_door"
+requires = PackedStringArray()
+script_text = "*: Дверь Тихого дома заперта снаружи. Изнутри не доносится ни звука."

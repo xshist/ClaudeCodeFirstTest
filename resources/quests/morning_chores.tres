@@ -1,0 +1,42 @@
+[gd_resource type="Resource" script_class="QuestData" format=3]
+
+[ext_resource type="Script" path="res://resources/types/quest_objective.gd" id="1_l6mw2"]
+[ext_resource type="Script" path="res://resources/types/quest_data.gd" id="2_uqney"]
+
+[sub_resource type="Resource" id="Resource_b3kq4"]
+script = ExtResource("1_l6mw2")
+text = "Набрать воды в колодце на площади"
+done_flag = &"water_fetched"
+visible_when = PackedStringArray()
+
+[sub_resource type="Resource" id="Resource_x0hv5"]
+script = ExtResource("1_l6mw2")
+text = "Отнести воду матери"
+done_flag = &"water_delivered"
+visible_when = PackedStringArray("water_fetched")
+
+[sub_resource type="Resource" id="Resource_5i5vr"]
+script = ExtResource("1_l6mw2")
+text = "Поговорить с отцом во дворе"
+done_flag = &"talked_father_rats"
+visible_when = PackedStringArray()
+
+[sub_resource type="Resource" id="Resource_wue4f"]
+script = ExtResource("1_l6mw2")
+text = "Выгнать крыс из амбара"
+counter = &"rats_killed"
+target = 4
+visible_when = PackedStringArray("talked_father_rats")
+
+[sub_resource type="Resource" id="Resource_i2i1p"]
+script = ExtResource("1_l6mw2")
+text = "Рассказать отцу"
+done_flag = &"rats_reported"
+visible_when = PackedStringArray("rats_done")
+
+[resource]
+script = ExtResource("2_uqney")
+id = &"morning_chores"
+title = "Утренние хлопоты"
+description = "Мать просит принести воды из колодца, а отец ворчит на крыс в амбаре."
+objectives = Array[ExtResource("1_l6mw2")]([SubResource("Resource_b3kq4"), SubResource("Resource_x0hv5"), SubResource("Resource_5i5vr"), SubResource("Resource_wue4f"), SubResource("Resource_i2i1p")])

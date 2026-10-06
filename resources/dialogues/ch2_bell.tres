@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="DialogueData" format=3]
+
+[ext_resource type="Script" path="res://resources/types/dialogue_data.gd" id="1_myffp"]
+
+[resource]
+script = ExtResource("1_myffp")
+id = &"ch2_bell"
+requires = PackedStringArray()
+script_text = "*: Над деревней плывёт колокольный звон. Люди отводят глаза и закрывают ставни.
+*: Со стороны площади идут двое в серых балахонах."

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="DialogueData" format=3]
+
+[ext_resource type="Script" path="res://resources/types/dialogue_data.gd" id="1_11asf"]
+
+[resource]
+script = ExtResource("1_11asf")
+id = &"gordey_yard_default"
+requires = PackedStringArray()
+script_text = "!if quest:find_tim -> tim
+gordey: Руки заняты, сын. Поговорим вечером.
+-> end
+@tim
+gordey: Тим опять к Тихому дому убёг? Ох, выдеру... Найди его, Кай. Я с этой ногой не дойду."

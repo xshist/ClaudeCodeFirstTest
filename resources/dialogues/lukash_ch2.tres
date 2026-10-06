@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="DialogueData" format=3]
+
+[ext_resource type="Script" path="res://resources/types/dialogue_data.gd" id="1_mjl0n"]
+
+[resource]
+script = ExtResource("1_mjl0n")
+id = &"lukash_ch2"
+requires = PackedStringArray()
+script_text = "lukash: Кай... Ты слышишь колокол?
+kai: Нет никакого колокола, Лукаш.
+lukash: Скоро будет. Я слышу его давно. Он тихий-тихий..."
